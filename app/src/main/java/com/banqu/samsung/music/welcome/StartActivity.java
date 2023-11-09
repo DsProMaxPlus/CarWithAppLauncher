@@ -20,7 +20,7 @@ public class StartActivity extends AppCompatActivity {
         boolean is = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("FirstStartFlag", true);
         //判断是否为第一次打开软
         if (is) {
-            if (Common.isInstalled(getApplicationContext(), "com.miui.carlink")) {
+            if (Common.isInstalled(getApplicationContext(), "com.miui.carlink") || Common.isAndroid14()) {
                 Toast.makeText(getApplicationContext(),"欢迎使用车联助手小米版",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(StartActivity.this, IntroducttoryActivity.class));
             } else {

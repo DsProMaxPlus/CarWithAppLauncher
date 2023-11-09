@@ -1,7 +1,6 @@
 package com.banqu.samsung.music.carlifeapplauncher.adapter;
 
 import android.accessibilityservice.AccessibilityService;
-import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +11,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.net.Uri;
+import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -529,5 +529,9 @@ public class Common {
         Random random = new Random();
         int num = random.nextInt(max) % (max - min + 1) + min;
         return cl[num];
+    }
+
+    public static boolean isAndroid14() {
+        return Build.VERSION.SDK_INT >= 34;
     }
 }

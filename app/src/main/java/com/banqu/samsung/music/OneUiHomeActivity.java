@@ -146,7 +146,7 @@ public class OneUiHomeActivity extends AppCompatActivity {
 
             Preference version = findPreference("layoutils");
 
-            if (Common.isInstalled(requireContext(), "com.miui.carlink")) {
+            if (Common.isInstalled(requireContext(), "com.miui.carlink") || Common.isAndroid14()) {
                 String versionName = Common.getCarlinkVersionName(getContext());
                 version.setTitle("车联服务：" + versionName + "\r\n小米版");
             } else {
